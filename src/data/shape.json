@@ -1,0 +1,13 @@
+{
+	"mainShape": {
+		"type": "fromPhysicsEditor",
+		"fixtures": [
+			{
+				"vertices": [
+					[{"x":-594,"y":-320},{"x":439,"y":-285},{"x":-432,"y":113},{"x":343,"y":56}]
+				]
+			}
+        ]
+    }
+}
+    
