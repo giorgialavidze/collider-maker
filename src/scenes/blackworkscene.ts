@@ -3,6 +3,7 @@ import Matter from "matter-js";
 
 export default class BlackWork extends Phaser.Scene {
     mesh:any
+
   body!:Phaser.Physics.Matter.Sprite
   vertices:Array<object> = []
   shapeData:any = {
@@ -27,7 +28,7 @@ export default class BlackWork extends Phaser.Scene {
     
         this.body = this.matter.add.sprite(
           this.game.canvas.width/2,
-          this.game.canvas.height/2,
+          240,
           "",
           undefined,
           {  
@@ -37,27 +38,51 @@ export default class BlackWork extends Phaser.Scene {
         ).setOrigin(0);
       }
      create() {
-            var image = this.add.image(300, 390, 'Ground').setDepth(2);
-            image.scale = 3.2;
+        //     var image = this.add.image(300, 390, 'Ground').setDepth(2);
+        //     image.scale = 3.2;
         
-            var groundCurve = new Phaser.Curves.Spline([
-            new Phaser.Math.Vector2(0, 100),
-            new Phaser.Math.Vector2(400, 400),
-            new Phaser.Math.Vector2(800, 100),
-        ]);
+        //     var groundCurve = new Phaser.Curves.Spline([
+        //     new Phaser.Math.Vector2(0, 100),
+        //     new Phaser.Math.Vector2(400, 400),
+        //     new Phaser.Math.Vector2(800, 100),
+        // ]);
 
         var roadCurve = new Phaser.Curves.Spline([
             new Phaser.Math.Vector2(0, 80),
-            new Phaser.Math.Vector2(400, 380),
+            new Phaser.Math.Vector2(400, 400),
             new Phaser.Math.Vector2(800, 80),
         ]);
         //-x -(this.game.canvas.width/2) - width/2
         // - y - (this.game.canvas.height/4)-height/2- curveposy
-        this.vertices.push({"x":-(this.game.canvas.width/2)-80,"y":(this.game.canvas.height/4)-47.5-80});
-        this.vertices.push({"x":100,"y":95});
-        this.vertices.push({"x":200,"y":20});
+        this.vertices.push({"x":0,"y":80});
+        this.vertices.push({"x":400,"y":400});
+        this.vertices.push({"x":800,"y":80});
         
-        this.draw();
+        //this.draw();
+
+        let obj = {
+          path:"M140 100C140 122.091 122.091 140 100 140C77.9086 140 60 122.091 60 100C60 77.9086 77.9086 60 100 60C122.091 60 140 77.9086 140 100Z",
+          fill:"#4D90DE",
+        }
+        //this.matter.add.fromSVG(100,100,obj);
+        const startPoint = new Phaser.Math.Vector2(50, 260);
+        const controlPoint1 = new Phaser.Math.Vector2(610, 25);
+        const controlPoint2 = new Phaser.Math.Vector2(320, 370);
+        const endPoint = new Phaser.Math.Vector2(735, 550);
+            
+        const bezierCurve = new Phaser.Curves.CubicBezier(startPoint, controlPoint1, controlPoint2, endPoint);
+        const curve = this.add.curve(1400, 1400, bezierCurve, 0xb5651d);
+        curve.setClosePath(true);
+        curve.setStrokeStyle(2, 0x654321);
+
+        this.matter.add.gameObject(curve, {isStatic: true, shape: {
+          type: 'fromVerts',
+          verts: [bezierCurve.getPoints(100)],
+          flagInternal: true,
+          removeCollinear: 0,
+          minimumArea: 0,
+        }});
+        
         
           
         
@@ -107,7 +132,7 @@ export default class BlackWork extends Phaser.Scene {
        
         
         var groundPath = this.add.path(0, 0);
-        groundPath.add(groundCurve);
+        //groundPath.add(groundCurve);
         var roadPath = this.add.path(0, 0);
         roadPath.add(roadCurve);
         
@@ -130,7 +155,7 @@ export default class BlackWork extends Phaser.Scene {
          
         groundGraphics.fill();
         var mask = groundGraphics.createGeometryMask();
-        image.setMask(mask);
+       // image.setMask(mask);
     
    
     }
