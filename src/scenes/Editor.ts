@@ -23,10 +23,31 @@ export default class Editor extends Phaser.Scene{
         // this.addEvents();
         // this.addInterface();
 
-        console.log(this.cache.xml.get('mySvg'))
-        this.matter.add.fromSVG(400, 300, this.cache.xml.get('mySvg'),1,{
-            isStatic: true
-        });
+        const PATH = "M 9.2 112.5 C 20.1667 12.0667 28.4246 39.5251 70 52.1 C 99.7424 71.4584 116.7735 29.2354 161.8 58.6 C 239 91 231.0239 30.6547 339.5972 85.2962 C 442.8483 65.4266 606 47.7 579.1 104.5";
+
+        let pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pathElement.setAttributeNS(null, 'd', PATH);
+        pathElement.setAttributeNS(null, 'id', 'path3780');
+        
+        const setVerts = this.matter.svg.pathToVertices(pathElement, 10);
+        const collider = this.matter.add.fromVertices(400, 300, setVerts, {isStatic: true});
+        const groundPath = this.add.path(0, 0);
+        const asd =this.add.image(400,300,"myImage").setScale(2);
+        //groundPath.add(collider);
+        const groundGraphics = this.add.graphics();
+        groundGraphics.beginPath();
+        groundPath.draw(groundGraphics);
+
+        groundGraphics.lineTo(this.width, this.height);
+        groundGraphics.lineTo(0, this.height);
+        groundGraphics.fill();
+
+        const maskImage = this.add.image(0, 0, 'Ground')
+        .setDepth(2)
+        .setOrigin(0)
+        .setDisplaySize(this.width,this.height)
+        const mask = groundGraphics.createGeometryMask();
+        maskImage.setMask(mask);
     }
 
     addCollider(){
