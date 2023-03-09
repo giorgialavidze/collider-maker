@@ -64,7 +64,12 @@ export default class BlackWork extends Phaser.Scene {
           path:"M140 100C140 122.091 122.091 140 100 140C77.9086 140 60 122.091 60 100C60 77.9086 77.9086 60 100 60C122.091 60 140 77.9086 140 100Z",
           fill:"#4D90DE",
         }
-        //this.matter.add.fromSVG(100,100,obj);
+
+        
+        this.matter.add.fromSVG(100,100,obj);
+
+
+
         const startPoint = new Phaser.Math.Vector2(50, 260);
         const controlPoint1 = new Phaser.Math.Vector2(610, 25);
         const controlPoint2 = new Phaser.Math.Vector2(320, 370);
@@ -132,7 +137,7 @@ export default class BlackWork extends Phaser.Scene {
        
         
         var groundPath = this.add.path(0, 0);
-        //groundPath.add(groundCurve);
+        // groundPath.add(groundCurve);
         var roadPath = this.add.path(0, 0);
         roadPath.add(roadCurve);
         
@@ -156,7 +161,5 @@ export default class BlackWork extends Phaser.Scene {
         groundGraphics.fill();
         var mask = groundGraphics.createGeometryMask();
        // image.setMask(mask);
-    
-   
     }
 }  

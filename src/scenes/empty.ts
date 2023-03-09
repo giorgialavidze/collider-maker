@@ -23,7 +23,6 @@ export default class empty extends Phaser.Scene {
         roadPath.draw(roadGraphics);
 
 
-
         //collider
         var asd = new Phaser.Curves.Spline([
             new Phaser.Math.Vector2(0, 80),

@@ -289,6 +289,11 @@
     "process" "^0.11.1"
     "util" "^0.10.3"
 
+"pathseg@^1.2.1":
+  "integrity" "sha512-LtvemzPvcGamWBbNWJaIrgfUzpynXfwYrP6SSFVRhNHVcCaq6SVm4kRGJNuIV8qzBKgCN3fEXFZZ16YETFIXoA=="
+  "resolved" "https://registry.npmjs.org/pathseg/-/pathseg-1.2.1.tgz"
+  "version" "1.2.1"
+
 "phaser@^3.55.2":
   "integrity" "sha512-amKXsbb2Ht29dGPKvt1edq3yGGYKtq8373GpJYGKPNPnneYY6MtVTOgjHDuZwtmUyK4v86FugkT3hzW/N4tjxQ=="
   "resolved" "https://registry.npmjs.org/phaser/-/phaser-3.55.2.tgz"

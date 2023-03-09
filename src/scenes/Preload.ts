@@ -13,12 +13,14 @@ export default class Preload extends Phaser.Scene {
     this.load.image('drawButton', 'src/images/drawbtn.png');
     this.load.image('Ground', 'src/images/groundicn.jpg');
 
+    this.load.xml("mySvg","src/images/mySvg.svg")
+
 
   }
   create() {
     //this.scene.start("Road")
     //this.scene.start("BlackWork")
-    this.scene.start("empty")
+    this.scene.start("Editor")
     //this.scene.start("GameScene")
     }
 

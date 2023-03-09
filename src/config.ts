@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 export default {
   type: Phaser.AUTO,
   parent: 'game',
-  backgroundColor: '#80A5E7',
+  backgroundColor: '#F5EDE4',
   physics: {
     default: 'matter',
     matter: {

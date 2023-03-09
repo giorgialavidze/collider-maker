@@ -32,6 +32,7 @@
   "dependencies": {
     "edit-json-file": "^1.7.0",
     "fs": "^0.0.1-security",
-    "matter-js": "^0.19.0"
+    "matter-js": "^0.19.0",
+    "pathseg": "^1.2.1"
   }
 }
