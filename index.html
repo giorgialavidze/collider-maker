@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Phaser 3 TypeScript Starter</title>
+    <title>Phaser Matter Collider</title>
     
     <meta charset="utf-8" />
     <style>
@@ -10,11 +10,34 @@
       }
     </style>
     <script type="module" src="/src/index.ts"></script>
+   
+
+    <link rel="stylesheet" type="text/css" href="./src/scenes/Game.css">
   </head>
   <body>
     <div id="game">
-      <input accept="image/*" type='file' id="localImage" style="position:absolute;" />
-    
+      <input accept="image/*" type='file' id="imageUploader" style="position:absolute; visibility: hidden;" />
+      <input id="width" style="visibility: hidden;">
+      <input id="height" style="visibility: hidden;">
+      <p id='txtwidth' style="visibility: hidden;">CanvasWidth :</p>
+      <p id="txtheight" style="visibility: hidden;">CanvasHeight :</p>
+      <button id = "applybtn" style="visibility: hidden;">Apply</button>
+      <input type="text" id = "inputshapename"  style="position:absolute;" placeholder="Rename shape">
+      <div id="linediv"></div>
+      <img src="src/images/drawbtn.png" id="drawbtn" style="position: absolute;">
+      <button id ="downloadtxtbtn" style="visibility: hidden;">Download Instruction</button>
+      <button id="downloadjsonbtn" style="visibility: hidden;">Download JSON File</button>
+      <button id="copybtn" style="visibility: hidden;">Copy Code</button>
+     
+      <img src="src/images/zoom.png" id ="zoom" style="position: absolute;">
+      <img src="src/images/ereaser.png" alt="Delete vertex" id ="deletevertice" style="position:absolute;">
+      
+      <img src="src/images/zoomout.png" id ="zoomout" style="position: absolute;">
+      <img src="src/images/imageUploader.png" id ="imageUploadbtn" style="position: absolute;">
+      <img src="src/images/reset.png" id ="reset" style="position: absolute;visibility: hidden;">
+
+      
+      
     </div>
   </body>
  

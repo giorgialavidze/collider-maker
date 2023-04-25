@@ -6,7 +6,7 @@ export default {
   dom: {
     createContainer: true
 },
-  backgroundColor: '#F5EDE4',
+  backgroundColor: '222221',
   physics: {
     default: 'matter',
     matter: {
@@ -17,8 +17,8 @@ export default {
     }
 }, 
   scale: {
-    width: 800,
-    height: 600,
+    width: window.innerWidth/1.5,
+    height: window.innerHeight,
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
   }

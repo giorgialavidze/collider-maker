@@ -2,6 +2,9 @@ import { defineConfig } from 'vite';
 import replace from '@rollup/plugin-replace';
 
 export default defineConfig({
+  server: {
+    port: 8000,
+  },
   build: {
     rollupOptions: {
       plugins: [
@@ -18,3 +21,6 @@ export default defineConfig({
     }
   }
 });
+
+
+

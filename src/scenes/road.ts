@@ -1,9 +1,11 @@
+import {pawn  } from "/ColiderMaker/colidermaker/phaser3-rollup-typescript/src/data/shape.json";
 export default class Road extends Phaser.Scene {
     constructor() {
       super('Road');
     }
-
     create(){
+      const pown = pawn
+      console.log(pown)
       var roadCurve = new Phaser.Curves.Spline([
         new Phaser.Math.Vector2(0, 80),
         new Phaser.Math.Vector2(400, 400),
